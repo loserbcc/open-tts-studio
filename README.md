@@ -70,10 +70,17 @@ cd open-tts-studio
 docker compose -f docker-compose.kokoro.yml up -d
 ```
 
-**OR VoxCPM (Voice cloning, needs GPU)**
+**OR VibeVoice (real-time streaming TTS, ~2GB VRAM)**
 ```bash
-docker compose -f docker-compose.voxcpm.yml up -d
+docker compose -f docker-compose.vibevoice.yml up -d
 ```
+
+> ⚠️ **VoxCPM 1.5 path is not yet packaged.** `docker-compose.voxcpm.yml` in
+> this repo references a private image that was never published publicly. If
+> you want voice cloning today, use the **hosted alpha** at
+> [lessfortts.loser.com](https://lessfortts.loser.com), or build VoxCPM
+> yourself from [OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM). See the
+> header of `docker-compose.voxcpm.yml` for details.
 
 ### Step 2: Start the Studio
 

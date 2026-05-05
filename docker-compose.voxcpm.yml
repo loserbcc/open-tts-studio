@@ -1,22 +1,32 @@
-# Open Unified TTS Simple - VoxCPM 1.5 Backend
-# High-quality voice cloning, requires GPU (~8GB VRAM)
+# =============================================================================
+# VoxCPM 1.5 Backend — NOT YET PACKAGED
+# =============================================================================
 #
-# Note: You need voice reference files in ./voices/ directory
-# Format: ./voices/morgan/reference.wav + transcript.txt
+# This compose file references a `ghcr.io/loserbcc/voxcpm15:latest` image that
+# was never published publicly. The original build hardcoded paths from the
+# maintainer's workstation and was never genericized for release.
 #
-# Usage:
-#   docker compose -f docker-compose.voxcpm.yml up -d
-#   curl -X POST http://localhost:8765/v1/audio/speech \
-#     -H "Content-Type: application/json" \
-#     -d '{"input":"Hello world","voice":"morgan"}' -o test.mp3
+# Working alternatives today:
+#   - docker-compose.kokoro.yml      → 67 voices, CPU-friendly
+#   - docker-compose.vibevoice.yml   → real-time streaming TTS
+#   - hosted alpha at lessfortts.loser.com (uses voxcpm in production)
+#
+# To package VoxCPM 1.5 yourself:
+#   - Upstream source: https://github.com/OpenBMB/VoxCPM
+#   - Community Docker images exist on Docker Hub (search "voxcpm15")
+#     — vet before trusting; we have not audited them.
+#
+# When a clean public image ships, this file will be restored with a working
+# `image:` reference. The stub below uses a `disabled` profile so
+# `docker compose up` won't fail confusingly — it will report no services.
+# =============================================================================
 
 services:
   voxcpm:
-    image: ghcr.io/loserbcc/voxcpm15:latest
+    image: ghcr.io/loserbcc/voxcpm15:latest  # NOT PUBLISHED — see header
+    profiles: ["disabled"]                   # prevent accidental `up`
     ports:
       - "7870:7870"
-    volumes:
-      - ./voices:/app/voices:ro
     deploy:
       resources:
         reservations:
@@ -24,25 +34,3 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:7870/health"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
-
-  unified-tts:
-    build: .
-    ports:
-      - "8765:8765"
-    environment:
-      - TTS_BACKEND=voxcpm
-      - BACKEND_URL=http://voxcpm:7870
-    depends_on:
-      voxcpm:
-        condition: service_healthy
-
-# Voice cloning setup:
-# 1. Create ./voices/yourvoice/ directory
-# 2. Add reference.wav (10-30 seconds of clean speech)
-# 3. Add transcript.txt (exact transcription of the audio)
-# 4. Restart containers
