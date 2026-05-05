@@ -19,7 +19,7 @@ Create professional audiobooks, podcasts, and multi-speaker audio in minutes - n
 
 **Don't want to install anything?** Try the full-featured hosted version free while we're in alpha:
 
-### **[lessfortts.loser.com](https://lessfortts.loser.com)**
+### **[tts.scrappylabs.ai](https://tts.scrappylabs.ai)**
 
 | Feature | What You Get |
 |---------|--------------|
@@ -77,10 +77,11 @@ docker compose -f docker-compose.vibevoice.yml up -d
 
 > ⚠️ **VoxCPM 1.5 path is not yet packaged.** `docker-compose.voxcpm.yml` in
 > this repo references a private image that was never published publicly. If
-> you want voice cloning today, use the **hosted alpha** at
-> [lessfortts.loser.com](https://lessfortts.loser.com), or build VoxCPM
-> yourself from [OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM). See the
-> header of `docker-compose.voxcpm.yml` for details.
+> you want voice cloning today: try the hosted version at
+> [tts.scrappylabs.ai](https://tts.scrappylabs.ai), or build VoxCPM yourself
+> from [OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM) and point the proxy
+> at the resulting Gradio server. See the header of `docker-compose.voxcpm.yml`
+> for details.
 
 ### Step 2: Start the Studio
 
@@ -291,7 +292,7 @@ Just talk to your AI naturally:
 ```json
 {
   "env": {
-    "TTS_API_URL": "https://lessfortts.loser.com"
+    "TTS_API_URL": "https://tts.scrappylabs.ai"
   }
 }
 ```
@@ -302,7 +303,7 @@ That's it. Install the MCP server, set the URL, and your AI can speak. No Docker
 - **Character clones** (Morgan Freeman, Rick & Morty, etc.)
 - **Free during alpha** - no credit card required
 
-> **Coming Soon:** API keys and MCP access tokens for [lessfortts.loser.com](https://lessfortts.loser.com). Currently in dev/testing - free access while we build out authentication. Want early access? Email buddy@loser.com.
+> **Coming Soon:** API keys and MCP access tokens for [tts.scrappylabs.ai](https://tts.scrappylabs.ai). Currently in dev/testing - free access while we build out authentication. Want early access? Email buddy@loser.com.
 
 ### Architecture
 

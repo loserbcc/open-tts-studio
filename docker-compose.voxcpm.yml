@@ -9,7 +9,7 @@
 # Working alternatives today:
 #   - docker-compose.kokoro.yml      → 67 voices, CPU-friendly
 #   - docker-compose.vibevoice.yml   → real-time streaming TTS
-#   - hosted alpha at lessfortts.loser.com (uses voxcpm in production)
+#   - hosted version at tts.scrappylabs.ai
 #
 # To package VoxCPM 1.5 yourself:
 #   - Upstream source: https://github.com/OpenBMB/VoxCPM
