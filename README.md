@@ -11,6 +11,12 @@ Create professional audiobooks, podcasts, and multi-speaker audio in minutes - n
 > ⚠️ **Alpha Software** - This is v0.0.1, expect rough edges! Early adopters welcome. Please report bugs and share feedback.
 
 > **New to TTS?** Start here! This is the user-friendly front-end.
+
+> **Also from ScrappyLabs** — our current text-to-speech work ships as open weights on Hugging Face:
+> [**scrappy-voice-1**](https://huggingface.co/scrappylabsai/scrappy-voice-1) and the
+> [**scrappy-voice-family-1**](https://huggingface.co/scrappylabsai/scrappy-voice-family-1) set
+> (Apache-2.0), plus [**warble**](https://huggingface.co/scrappylabsai/warble).
+> Try them in your browser: [**scrappy-voice-tts**](https://huggingface.co/spaces/scrappylabsai/scrappy-voice-tts).
 > **Need the powerful API?** See [open-unified-tts](https://github.com/loserbcc/open-unified-tts) for backend routing and production features.
 
 ---
