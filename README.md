@@ -1,3 +1,12 @@
+> **⚠️ Archived — no longer maintained.**
+>
+> This is the front-end for [open-unified-tts](https://github.com/loserbcc/open-unified-tts),
+> which is also archived — it routed across a dozen TTS backends I no longer run, so neither
+> project can be tested or fixed honestly. Both stay readable under Apache-2.0 — **fork freely**.
+>
+> Current ScrappyLabs TTS work ships as open weights on Hugging Face:
+> [**scrappy-voice-1**](https://huggingface.co/scrappylabsai/scrappy-voice-1) · [**scrappy-voice-family-1**](https://huggingface.co/scrappylabsai/scrappy-voice-family-1) · [**warble**](https://huggingface.co/scrappylabsai/warble) · [**try it in your browser**](https://huggingface.co/spaces/scrappylabsai/scrappy-voice-tts)
+
 # Open TTS Studio
 
 ![Version](https://img.shields.io/badge/version-0.0.1--alpha-orange)
@@ -12,11 +21,6 @@ Create professional audiobooks, podcasts, and multi-speaker audio in minutes - n
 
 > **New to TTS?** Start here! This is the user-friendly front-end.
 
-> **Also from ScrappyLabs** — our current text-to-speech work ships as open weights on Hugging Face:
-> [**scrappy-voice-1**](https://huggingface.co/scrappylabsai/scrappy-voice-1) and the
-> [**scrappy-voice-family-1**](https://huggingface.co/scrappylabsai/scrappy-voice-family-1) set
-> (Apache-2.0), plus [**warble**](https://huggingface.co/scrappylabsai/warble).
-> Try them in your browser: [**scrappy-voice-tts**](https://huggingface.co/spaces/scrappylabsai/scrappy-voice-tts).
 > **Need the powerful API?** See [open-unified-tts](https://github.com/loserbcc/open-unified-tts) for backend routing and production features.
 
 ---
